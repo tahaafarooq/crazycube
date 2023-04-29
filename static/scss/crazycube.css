@@ -1,0 +1,74 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	background-color: white; 
+}
+
+#container {
+	width: 100%;
+
+	-webkit-perspective: 750;
+}
+
+#shape {
+	position: relative;
+	top: 120px;
+	margin: 0 auto;
+	width: 250px; height: 250px;
+
+	-webkit-animation: spin 20s infinite linear;
+	-webkit-transform-style: preserve-3d;
+}
+
+a img {
+	opacity: 0.8;
+
+	-webkit-transition: opacity 1s;
+}
+
+a:hover img {
+	opacity: 1;
+}
+
+h1 {
+	color: rgba(0,0,0,0.25);
+	font-family: sans-serif;
+	font-size: 34px;
+	font-weight: bold;
+	letter-spacing: -2px;
+	padding-top: 50px;
+	text-align: center;
+
+	text-shadow: 0px 2px 3px rgba(255,255,255,0.3);
+}
+
+#shape > div {
+	border: 1px solid #333;
+	position: absolute;
+	width: 250px; height: 250px;
+
+	-webkit-border-radius: 4px;
+	-webkit-transition: -webkit-transform 2s;
+}
+
+#shape > div img {
+	width: 100%; height: 100%;
+}
+
+/* This is where the 3D magic happens */
+@-webkit-keyframes spin {
+	from { -webkit-transform: rotateY(0) rotateX(0); }
+	to   { -webkit-transform: rotateY(-360deg) rotateX(360deg); }
+}
+
+/* 3D positioning for each of the images/links */
+.one { -webkit-transform: rotateX(90deg) translateZ(125px); }
+.two { -webkit-transform: translateZ(125px); }
+.three { -webkit-transform: rotateY(90deg) translateZ(125px); }
+.four { -webkit-transform: rotateY(180deg) translateZ(125px); }
+.five { -webkit-transform: rotateY(-90deg) translateZ(125px); }
+.six { -webkit-transform: rotateX(-90deg) translateZ(125px); }
